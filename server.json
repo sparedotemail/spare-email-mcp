@@ -1,0 +1,44 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.sparedotemail/spare-email-mcp",
+  "description": "Read-only MCP server for spare.email mailboxes: list mail, read messages, wait for OTP codes.",
+  "title": "Spare Email MCP",
+  "repository": {
+    "url": "https://github.com/sparedotemail/spare-email-mcp",
+    "source": "github"
+  },
+  "version": "0.1.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "spare-email-mcp",
+      "version": "0.1.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "SPARE_EMAIL_JWT",
+          "description": "Address JWT of the spare.email (or self-hosted cloudflare_temp_email) mailbox to access",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "SPARE_EMAIL_BASE_URL",
+          "description": "Base URL of the deployment (default: https://spare.email; set for self-hosted instances)",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        },
+        {
+          "name": "SPARE_EMAIL_SITE_PASSWORD",
+          "description": "Global x-custom-auth access password, if the deployment enforces one",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
