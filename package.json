@@ -1,0 +1,31 @@
+{
+  "name": "spare-email-mcp",
+  "version": "0.1.0",
+  "description": "Read-only MCP server for spare.email mailboxes (works with any cloudflare_temp_email deployment): list the inbox, read parsed mail, and wait for verification codes. Auth uses a user-supplied Address JWT; the server cannot create mailboxes or send mail.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "spare-email-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
