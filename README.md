@@ -91,7 +91,7 @@ The tools are a thin layer over the deployment's read-only parsed-mail
 endpoints (`GET /api/settings`, `GET /api/parsed_mails`, `GET
 /api/parsed_mail/:id`). Build your own client with plain HTTP if you prefer —
 usage notes, response shapes and the polling pattern are documented at
-<https://spare.email/temp-email-mcp>.
+<https://spare.email/docs/en/guide/feature/mail-api-parsed>.
 
 ## Development
 
