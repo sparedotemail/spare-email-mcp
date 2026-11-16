@@ -85,6 +85,14 @@ claude mcp add spare-email -e SPARE_EMAIL_JWT=eyJ... -- node /path/to/spare-emai
 3. Agent calls `wait_for_otp` (optionally filtering by subject) and gets the
    verification code without any human copy-pasting.
 
+## Underlying REST API
+
+The tools are a thin layer over the deployment's read-only parsed-mail
+endpoints (`GET /api/settings`, `GET /api/parsed_mails`, `GET
+/api/parsed_mail/:id`). Build your own client with plain HTTP if you prefer —
+usage notes, response shapes and the polling pattern are documented at
+<https://spare.email/temp-email-mcp>.
+
 ## Development
 
 ```bash
