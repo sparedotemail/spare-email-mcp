@@ -56,7 +56,19 @@ export class ApiError extends Error {
     }
 }
 
-const USER_AGENT = 'spare-email-mcp/0.1.0';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+const packageVersion = (() => {
+    try {
+        const pkg = JSON.parse(readFileSync(fileURLToPath(new URL('../package.json', import.meta.url)), 'utf8'));
+        return typeof pkg.version === 'string' ? pkg.version : '0.0.0';
+    } catch {
+        return '0.0.0';
+    }
+})();
+
+const USER_AGENT = `spare-email-mcp/${packageVersion}`;
 
 export class MailClient {
     constructor(private readonly config: ClientConfig) { }

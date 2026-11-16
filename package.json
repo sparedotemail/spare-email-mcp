@@ -1,6 +1,6 @@
 {
   "name": "spare-email-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "mcpName": "io.github.sparedotemail/spare-email-mcp",
   "description": "Read-only MCP server for spare.email mailboxes (works with any cloudflare_temp_email deployment): list the inbox, read parsed mail, and wait for verification codes. Auth uses a user-supplied Address JWT; the server cannot create mailboxes or send mail.",
   "type": "module",
